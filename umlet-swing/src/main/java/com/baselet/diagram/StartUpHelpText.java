@@ -93,7 +93,10 @@ public class StartUpHelpText extends JEditorPane implements ContainerListener, C
 		this.setPage(new URL("file:///" + filename));
 		addHyperlinkListener(new HyperLinkActiveListener());
 		setEditable(false);
-		setBackground(Color.WHITE);
+		setForeground(Color.WHITE);
+		// setSelectedTextColor(Color.RED);
+		// setSelectionColor(Color.BLACK);
+		// setBackground(Color.BLACK);
 		setSelectionColor(getBackground());
 		setSelectedTextColor(getForeground());
 	}

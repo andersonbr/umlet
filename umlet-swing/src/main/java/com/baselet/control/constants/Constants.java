@@ -92,7 +92,7 @@ public abstract class Constants extends SharedConstants {
 	public static final String DELIMITER_ADDITIONAL_ATTRIBUTES = ";";
 
 	public static final int PASTE_DISPLACEMENT_GRIDS = 2;
-	public static final Color GRID_COLOR = new Color(235, 235, 235);
+	public static final Color GRID_COLOR = new Color(30, 30, 30);
 
 	public static final List<String> fontFamilyList = Arrays.asList(new String[] { Font.SANS_SERIF, Font.SERIF, Font.MONOSPACED });
 

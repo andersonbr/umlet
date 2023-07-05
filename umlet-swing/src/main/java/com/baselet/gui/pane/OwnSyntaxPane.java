@@ -1,7 +1,6 @@
 package com.baselet.gui.pane;
 
-import java.awt.Component;
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +69,11 @@ public class OwnSyntaxPane {
 		AbstractTokenMakerFactory atmf = (AbstractTokenMakerFactory) TokenMakerFactory.getDefaultInstance();
 		atmf.putMapping(OwnTokenMaker.ID, OwnTokenMaker.class.getName());
 		textArea.setSyntaxEditingStyle(OwnTokenMaker.ID);
+		// customizacao textarea
+		textArea.setForeground(Color.WHITE);
+		textArea.setBackground(Color.BLACK);
+		textArea.setCurrentLineHighlightColor(Color.RED);
+		textArea.setSelectionColor(Color.BLUE);
 
 		textArea.getSyntaxScheme().getStyle(TokenTypes.RESERVED_WORD).foreground = Converter.convert(ThemeFactory.getCurrentTheme().getColor(Theme.ColorStyle.SYNTAX_HIGHLIGHTING));
 

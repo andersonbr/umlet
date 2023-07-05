@@ -15,6 +15,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.formdev</groupId>
+			<artifactId>flatlaf</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
 			<groupId>com.umlet</groupId>
 			<artifactId>umlet-elements</artifactId>
 			<version>${project.version}</version>
@@ -169,7 +174,7 @@
 					</archive>
 				</configuration>
 			</plugin>
-			<!-- Unpack the resources, required since the standalone application expects 
+			<!-- Unpack the resources, required since the standalone application expects
 				the resources to be placed in the build (target) directory -->
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>

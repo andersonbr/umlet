@@ -62,9 +62,9 @@ public class Config {
 	}
 
 	private void initUiManager() {
-		// The default MacOS theme looks ugly, therefore we set metal
+		// The default MacOS theme looks ugly, therefore we set FlatDarkLaf
 		if (SystemInfo.OS == Os.MAC) {
-			uiManager = "javax.swing.plaf.metal.MetalLookAndFeel";
+			uiManager = "com.formdev.flatlaf.FlatDarkLaf";
 		}
 		else if (Program.getInstance().getRuntimeType() == RuntimeType.ECLIPSE_PLUGIN && UIManager.getSystemLookAndFeelClassName().equals("com.sun.java.swing.plaf.gtk.GTKLookAndFeel")) {
 			uiManager = "javax.swing.plaf.metal.MetalLookAndFeel";

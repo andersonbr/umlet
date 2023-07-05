@@ -24,6 +24,10 @@ import javax.imageio.metadata.IIOMetadataNode;
 import javax.imageio.stream.ImageOutputStream;
 import javax.swing.JLayeredPane;
 
+import com.baselet.control.HandlerElementMap;
+import com.baselet.diagram.draw.DrawHandler;
+import com.baselet.diagram.draw.helper.ColorOwn;
+import com.baselet.diagram.draw.helper.theme.ThemeFactory;
 import org.apache.batik.dom.GenericDOMImplementation;
 import org.apache.batik.svggen.SVGGraphics2D;
 import org.sourceforge.jlibeps.epsgraphics.EpsGraphics2D;
@@ -229,6 +233,8 @@ public class OutputHandler {
 	public static void paintEntitiesIntoGraphics2D(Graphics2D g2d, Collection<GridElement> entities, FontHandler diagramFont) {
 		DiagramHandler handler = DiagramHandler.forExport(diagramFont); // #290: pass fontHandler from original diagramHandler to let the export use diagram specific fontsize+family
 		JLayeredPane tempPanel = new JLayeredPane();
+		ThemeFactory.changeTheme(ThemeFactory.THEMES.LIGHT, null, true);
+		System.out.println(ThemeFactory.getCurrentTheme().getClass());
 		for (GridElement entity : entities) {
 			GridElement clone = ElementFactorySwing.createCopy(entity, handler);
 			com.baselet.element.interfaces.Component component = clone.getComponent();
@@ -237,6 +243,7 @@ public class OutputHandler {
 			component.translateForExport();
 			tempPanel.add((Component) component, clone.getLayer());
 		}
+		ThemeFactory.changeTheme(ThemeFactory.THEMES.DARK, null, true);
 		tempPanel.validate();
 		tempPanel.setBackground(Color.WHITE);
 		tempPanel.setSize(Integer.MAX_VALUE, Integer.MAX_VALUE);

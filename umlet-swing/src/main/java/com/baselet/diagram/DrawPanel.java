@@ -38,6 +38,7 @@ import com.baselet.element.old.element.Relation;
 import com.baselet.gui.filedrop.FileDrop;
 import com.baselet.gui.filedrop.FileDropListener;
 import com.baselet.gui.listener.ScrollbarListener;
+import com.baselet.diagram.draw.helper.theme.ThemeFactory;
 
 @SuppressWarnings("serial")
 public class DrawPanel extends JLayeredPane implements Printable {
@@ -56,7 +57,9 @@ public class DrawPanel extends JLayeredPane implements Printable {
 		// AB: Origin is used to track diagram movement in Cut Command
 		origin = new Point();
 		setLayout(null);
-		setBackground(Color.WHITE);
+		if (ThemeFactory.getActiveThemeEnum() == ThemeFactory.THEMES.DARK) {
+			setBackground(Color.BLACK);
+		}
 		setOpaque(true);
 		selector = new SelectorOld(this);
 		JScrollPane p = new JScrollPane() {

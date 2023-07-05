@@ -32,8 +32,9 @@ public class ComponentSwing extends JComponent implements Component {
 		metaDrawer.setGraphics(g);
 		boolean selected = HandlerElementMap.getHandlerForElement(gridElement).getDrawPanel().getSelector().isSelected(gridElement);
 		drawer.drawAll(selected);
+		// logica se o componente estiver selecionado
 		if (selected) {
-			metaDrawer.drawAll();
+//			metaDrawer.drawAll();
 		}
 	}
 

@@ -52,9 +52,9 @@ public class ThemeFactory {
 	}
 
 	public static Theme getCurrentTheme() {
-		if (theme == null) {
-			changeTheme(THEMES.LIGHT, null, true);
-		}
+		 if (theme == null) {
+			changeTheme(THEMES.DARK, null, true);
+		 }
 		return theme;
 	}
 

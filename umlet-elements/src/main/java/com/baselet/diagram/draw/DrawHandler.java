@@ -72,7 +72,12 @@ public abstract class DrawHandler {
 
 	public void drawAll(boolean isSelected) {
 		if (isSelected) {
-			overlay.setForegroundColor(ThemeFactory.getCurrentTheme().getColor(Theme.ColorStyle.SELECTION_FG));
+			if (ThemeFactory.getActiveThemeEnum() == ThemeFactory.THEMES.DARK) {
+				// cor do item selecionado no grid
+				overlay.setForegroundColor(new ColorOwn(255,255,154,255));
+			} else {
+				overlay.setForegroundColor(ThemeFactory.getCurrentTheme().getColor(Theme.ColorStyle.SELECTION_FG));
+			}
 		}
 		else {
 			overlay.setForegroundColor(null);
